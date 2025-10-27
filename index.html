@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharma Grocery Mart</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sharma Grocery Mart</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Sharma Grocery Mart</h1>
-            <p>Fresh groceries delivered to your doorstep!</p>
-            <a href="#products" class="hero-cta">Shop Now</a>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Sharma Grocery Mart</h1>
+      <p>Fresh groceries delivered to your doorstep!</p>
+      <a href="#products" class="hero-cta">Shop Now</a>
+    </div>
+  </section>
 
-    <!-- Categories Section -->
-    <section class="categories">
-        <h2>Shop by Category</h2>
-        <div class="category-buttons">
-  <button class="category-card active" data-filter="All">All</button>
-  <button class="category-card" data-filter="Offers">Offers</button>
-  <button class="category-card" data-filter="Flours & Atta">Flours & Atta</button>
-  <button class="category-card" data-filter="Masala & Spices">Masala & Spices</button>
-  <button class="category-card" data-filter="Pulses & Dals">Pulses & Dals</button>
-  <button class="category-card" data-filter="Oils & Ghee">Oils & Ghee</button>
-  <button class="category-card" data-filter="Snacks & Mixes">Snacks & Mixes</button>
-  <button class="category-card" data-filter="Personal Care & Cleaning">Personal Care & Cleaning</button>
-  <button class="category-card" data-filter="Others / General">Others / General</button>
-</div>
+  <!-- Categories Section -->
+  <section class="categories">
+    <h2>Shop by Category</h2>
 
-    </section>
+    <!-- 🔍 Search Bar -->
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search for a product..." />
+      <button id="clear-search" title="Clear search">&times;</button>
+    </div>
 
-    <!-- Products Section -->
-    <section id="products" class="products-section">
-        <div class="products-container" id="products-container">
-            <!-- Products will be inserted via JS -->
-        </div>
-    </section>
+    <!-- Category Buttons -->
+    <div class="category-buttons">
+      <button class="category-card active" data-filter="All">All</button>
+      <button class="category-card" data-filter="Offers">Offers</button>
+      <button class="category-card" data-filter="Flours & Atta">Flours & Atta</button>
+      <button class="category-card" data-filter="Masala & Spices">Masala & Spices</button>
+      <button class="category-card" data-filter="Pulses & Dals">Pulses & Dals</button>
+      <button class="category-card" data-filter="Oils & Ghee">Oils & Ghee</button>
+      <button class="category-card" data-filter="Snacks & Mixes">Snacks & Mixes</button>
+      <button class="category-card" data-filter="Personal Care & Cleaning">Personal Care & Cleaning</button>
+      <button class="category-card" data-filter="Others / General">Others / General</button>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2025 Sharma Grocery Mart. All Rights Reserved.</p>
-    </footer>
+  <!-- Products Section -->
+  <section id="products" class="products-section">
+    <div class="products-container" id="products-container"></div>
+  </section>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>© 2025 Sharma Grocery Mart. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script2.js"></script>
 </body>
 </html>

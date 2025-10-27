@@ -1,8 +1,8 @@
-// --- Full product list (156 items) extracted from your Excel ---
-// Price format: ₦1500  (no commas)
-// Image: placeholder for now (replace URLs if you have real images)
-const products = [
-  {"name":"Agarbathi (1 pack)","price":"₦520","image":"img00.webp","category":"Personal Care & Cleaning","offer":"buy 1 get 1"},
+// ========== CONFIGURE YOUR WHATSAPP NUMBER HERE ==========
+const whatsappNumber = "917386032284"; // 👈 Replace with your WhatsApp number (no + or spaces)
+
+// ========== PRODUCT LIST ==========
+const products = [  {"name":"Agarbathi (1 pack)","price":"₦520","image":"img00.webp","category":"Personal Care & Cleaning","offer":"buy 1 get 1"},
   {"name":"Agarbathi -Mangaldeep (Big)","price":"₦3050","image":"img11.jpg","category":"Personal Care & Cleaning","offer":"50% off"},
   {"name":"Ajwain (100 gm)","price":"₦1610","image":"img12.jpg","category":"Masala & Spices"},
   {"name":"Almond (100 gms)","price":"₦2880","image":"ing13.jpg","category":"Others / General","offer":"15% off"},
@@ -158,48 +158,85 @@ const products = [
   {"name":"Vicks VapoRub BabyRub (25 gms)","price":"₦3640","image":"https://via.placeholder.com/150","category":"Personal Care & Cleaning"},
   {"name":"Washing Powder (Good Mama - 800 gms)","price":"₦1880","image":"https://via.placeholder.com/150","category":"Personal Care & Cleaning"},
   {"name":"Washing Soap (Viva - 250 gms)","price":"₦800","image":"https://via.placeholder.com/150","category":"Personal Care & Cleaning"},
-  {"name":"Yoghurt Chilly (More Milagai - 150g)","price":"₦4080","image":"https://via.placeholder.com/150","category":"Snacks & Mixes"}
-];
+  {"name":"Yoghurt Chilly (More Milagai - 150g)","price":"₦4080","image":"https://via.placeholder.com/150","category":"Snacks & Mixes"}];
 
-const productList = document.getElementById("product-list");
+// ========== FUNCTIONS ==========
+const productsContainer = document.getElementById("products-container");
+const categoryButtons = document.querySelectorAll(".category-card");
+const searchInput = document.getElementById("search-input");
+const clearSearch = document.getElementById("clear-search");
 
-function displayProducts(items) {
-  productList.innerHTML = "";
-  items.forEach(p => {
-    const card = document.createElement("div");
-    card.classList.add("product-card");
-    card.innerHTML = `
-      <span class="offer-label">${p.offer}</span>
-      <img src="${p.image}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p class="price">${p.price}</p>
-      <a href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20buying%20${encodeURIComponent(p.name)}%20for%20${p.price}" target="_blank" class="cta-button">Order via WhatsApp</a>
+// Render products dynamically
+function displayProducts(filteredProducts) {
+  productsContainer.innerHTML = "";
+
+  if (filteredProducts.length === 0) {
+    productsContainer.innerHTML = `<p>No products found.</p>`;
+    return;
+  }
+
+  filteredProducts.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    productCard.innerHTML = `
+      <div class="image-container">
+        ${product.offer ? `<span class="offer-badge">${product.offer}</span>` : ""}
+        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200';" />
+      </div>
+      <div class="product-details">
+        <h3>${product.name}</h3>
+        <p class="price">${product.price}</p>
+        <button class="whatsapp-btn">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </button>
+      </div>
     `;
-    productList.appendChild(card);
+
+    // WhatsApp button click
+    const whatsappBtn = productCard.querySelector(".whatsapp-btn");
+    whatsappBtn.addEventListener("click", () => {
+      const message = `Hello Sharma Grocery Mart 👋,\nI want to order:\n🛒 *${product.name}* - ${product.price}`;
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    });
+
+    productsContainer.appendChild(productCard);
   });
 }
 
-displayProducts(products);
 
-// 🔍 Search Functionality
-function searchProducts() {
-  const query = document.getElementById("search-input").value.toLowerCase();
-  document.getElementById("clear-search").style.display = query ? "block" : "none";
-  const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+
+// ========== FILTER BY CATEGORY ==========
+categoryButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".category-card.active").classList.remove("active");
+    btn.classList.add("active");
+
+    const category = btn.getAttribute("data-filter");
+
+    if (category === "All") {
+      displayProducts(products);
+    } else {
+      const filtered = products.filter((p) => p.category === category);
+      displayProducts(filtered);
+    }
+  });
+});
+
+// ========== SEARCH FUNCTIONALITY ==========
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const filtered = products.filter((p) =>
+    p.name.toLowerCase().includes(query)
+  );
   displayProducts(filtered);
-}
+});
 
-// 🧹 Clear Search
-function clearSearch() {
-  document.getElementById("search-input").value = "";
-  document.getElementById("clear-search").style.display = "none";
+clearSearch.addEventListener("click", () => {
+  searchInput.value = "";
   displayProducts(products);
-}
+});
 
-// 🏷️ Category Filter
-function filterCategory(category) {
-  document.querySelectorAll(".category-card").forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
-  const filtered = category === "all" ? products : products.filter(p => p.category === category);
-  displayProducts(filtered);
-}
+// ========== INITIAL LOAD ==========
+displayProducts(products);
