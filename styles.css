@@ -286,7 +286,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 }
-
+/* 
 .category-card {
     background-color: white;
     padding: 15px 25px;
@@ -305,7 +305,38 @@ body {
 .category-card.active {
     background-color: #4CAF50;
     color: white;
+} */
+ .category-card {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px;
+  color: #333;
 }
+
+.category-card:hover {
+  background-color: #f3f3f3;
+}
+
+.category-card.active {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
 
 /* Products Section */
 .products-section {
