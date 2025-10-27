@@ -1,21 +1,21 @@
 // List of products
 const products = [
-    {name: "Aashirvaad Atta", price: "₹250", image: "https://via.placeholder.com/150", category: "Staples", offer: "10% OFF"},
-    {name: "Parle-G Biscuits", price: "₹50", image: "https://via.placeholder.com/150", category: "Snacks", offer: "Buy 1 Get 1"},
-    {name: "Tata Tea", price: "₹120", image: "https://via.placeholder.com/150", category: "Beverages"},
-    {name: "Sunflower Oil", price: "₹180", image: "https://via.placeholder.com/150", category: "Oils & Ghee", offer: "15% OFF"},
-    {name: "Maggi Noodles", price: "₹20", image: "https://via.placeholder.com/150", category: "Snacks"},
-    {name: "Dalda Ghee", price: "₹300", image: "https://via.placeholder.com/150", category: "Oils & Ghee"},
-    {name: "Nestle Milkmaid", price: "₹70", image: "https://via.placeholder.com/150", category: "Staples", offer: "20% OFF"},
-    {name: "Britannia Bread", price: "₹40", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "Amul Butter", price: "₹60", image: "https://via.placeholder.com/150", category: "Oils & Ghee"},
-    {name: "Tata Salt", price: "₹25", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "Cadbury Dairy Milk", price: "₹50", image: "https://via.placeholder.com/150", category: "Snacks", offer: "Buy 2 Get 1"},
-    {name: "Red Label Tea", price: "₹150", image: "https://via.placeholder.com/150", category: "Beverages"},
-    {name: "Saffola Oil", price: "₹220", image: "https://via.placeholder.com/150", category: "Oils & Ghee", offer: "5% OFF"},
-    {name: "Haldiram Snacks", price: "₹80", image: "https://via.placeholder.com/150", category: "Snacks"},
-    {name: "Patanjali Honey", price: "₹200", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "MTR Ready Mix", price: "₹90", image: "https://via.placeholder.com/150", category: "Staples", offer: "Flat ₹10 OFF"}
+    {name: "Aashirvaad Atta", price: "₹250", image: "img1.jpg", category: "Staples", offer: "10% OFF"},
+    {name: "Parle-G Biscuits", price: "₹50", image: "img2.jpg", category: "Snacks", offer: "Buy 1 Get 1"},
+    {name: "Tata Tea", price: "₹120", image: "img3.jpg", category: "Beverages"},
+    {name: "Sunflower Oil", price: "₹180", image: "img4.jpg", category: "Oils & Ghee", offer: "15% OFF"},
+    {name: "Maggi Noodles", price: "₹20", image: "img5.jpg", category: "Snacks"},
+    {name: "Dalda Ghee", price: "₹300", image: "img6.jpg", category: "Oils & Ghee"},
+    {name: "Nestle Milkmaid", price: "₹70", image: "img1.jpg", category: "Staples", offer: "20% OFF"},
+    {name: "Britannia Bread", price: "₹40", image: "img3.jpg", category: "Staples"},
+    {name: "Amul Butter", price: "₹60", image: "img4.jpg", category: "Oils & Ghee"},
+    {name: "Tata Salt", price: "₹25", image: "img6.jpg", category: "Staples"},
+    {name: "Cadbury Dairy Milk", price: "₹50", image: "img4.jpg", category: "Snacks", offer: "Buy 2 Get 1"},
+    {name: "Red Label Tea", price: "₹150", image: "img2.jpg", category: "Beverages"},
+    {name: "Saffola Oil", price: "₹220", image: "img5.jpg", category: "Oils & Ghee", offer: "5% OFF"},
+    {name: "Haldiram Snacks", price: "₹80", image: "img1.jpg", category: "Snacks"},
+    {name: "Patanjali Honey", price: "₹200", image: "img6.jpg", category: "Staples"},
+    {name: "MTR Ready Mix", price: "₹90", image: "img2.jpg", category: "Staples", offer: "Flat ₹10 OFF"}
 ];
 
 const productsContainer = document.getElementById('products-container');
