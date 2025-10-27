@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // List of products
 const products = [
     {name: "Aashirvaad Atta", price: "₹250", image: "https://via.placeholder.com/150", category: "Staples", offer: "10% OFF"},
@@ -60,57 +59,3 @@ categoryCards.forEach(card => {
         renderProducts(card.getAttribute('data-filter'));
     });
 });
-=======
-// List of products
-const products = [
-    {name: "Aashirvaad Atta", price: "₹250", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "Parle-G Biscuits", price: "₹50", image: "https://via.placeholder.com/150", category: "Snacks"},
-    {name: "Tata Tea", price: "₹120", image: "https://via.placeholder.com/150", category: "Beverages"},
-    {name: "Sunflower Oil", price: "₹180", image: "https://via.placeholder.com/150", category: "Oils & Ghee"},
-    {name: "Maggi Noodles", price: "₹20", image: "https://via.placeholder.com/150", category: "Snacks"},
-    {name: "Dalda Ghee", price: "₹300", image: "https://via.placeholder.com/150", category: "Oils & Ghee"},
-    {name: "Nestle Milkmaid", price: "₹70", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "Britannia Bread", price: "₹40", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "Amul Butter", price: "₹60", image: "https://via.placeholder.com/150", category: "Oils & Ghee"},
-    {name: "Tata Salt", price: "₹25", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "Cadbury Dairy Milk", price: "₹50", image: "https://via.placeholder.com/150", category: "Snacks"},
-    {name: "Red Label Tea", price: "₹150", image: "https://via.placeholder.com/150", category: "Beverages"},
-    {name: "Saffola Oil", price: "₹220", image: "https://via.placeholder.com/150", category: "Oils & Ghee"},
-    {name: "Haldiram Snacks", price: "₹80", image: "https://via.placeholder.com/150", category: "Snacks"},
-    {name: "Patanjali Honey", price: "₹200", image: "https://via.placeholder.com/150", category: "Staples"},
-    {name: "MTR Ready Mix", price: "₹90", image: "https://via.placeholder.com/150", category: "Staples"}
-];
-
-const productsContainer = document.getElementById('products-container');
-
-// Render products
-function renderProducts(filter = "All") {
-    productsContainer.innerHTML = '';
-    products.forEach(product => {
-        if(filter === "All" || product.category === filter) {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p class="price">${product.price}</p>
-                <a href="https://wa.me/917386032284?text=${encodeURIComponent(`Hi! I would like to order ${product.name}. Please confirm availability.`)}" target="_blank" class="cta-button">Order on WhatsApp</a>
-            `;
-            productsContainer.appendChild(card);
-        }
-    });
-}
-
-// Initial render
-renderProducts();
-
-// Category filter
-const categoryCards = document.querySelectorAll('.category-card');
-categoryCards.forEach(card => {
-    card.addEventListener('click', () => {
-        categoryCards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        renderProducts(card.getAttribute('data-filter'));
-    });
-});
->>>>>>> 9c36911f153d4ecd52e540a116a719d24bbeb8bd
