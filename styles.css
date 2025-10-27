@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -93,7 +92,7 @@ body {
     justify-items: center;
 }
 
-.product-card {
+/* .product-card {
     background: linear-gradient(145deg, #ffffff, #f1fdf4);
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -102,18 +101,43 @@ body {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
+} */
+ .product-card {
+    position: relative; /* important for badge placement */
+    background: #f9fff9;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-.product-card img {
+/* .product-card img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+} */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 20px; /* small top space so badge doesn’t overlap weirdly */
 }
+
+
 
 .product-card h3 {
     margin: 10px 0 5px 0;
@@ -140,7 +164,7 @@ body {
 }
 
 /* Offer Badge */
-.offer-badge {
+/* .offer-badge {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -151,7 +175,21 @@ body {
     font-size: 0.9em;
     font-weight: bold;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+} */
+ /* Offer badge style */
+.offer-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
 }
+
 
 /* Footer */
 footer {
@@ -187,7 +225,6 @@ footer {
         font-size: 1em;
     }
 }
-=======
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -361,4 +398,3 @@ footer {
         font-size: 1em;
     }
 }
->>>>>>> 9c36911f153d4ecd52e540a116a719d24bbeb8bd
